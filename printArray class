@@ -1,0 +1,25 @@
+import java.security.SecureRandom;
+public class PrintArray {
+
+    public static int printArray(int number[], int count)
+    {
+     if (count <= -1)
+        return 1;
+     else
+            System.out.printf("%d ", number[count]);
+            if (count % 10 == 0)
+                    System.out.println();
+        count--;
+
+        return printArray(number, count);
+    }
+
+    public static void main(String[] args)
+    {
+	int[] number = new int[100];
+        SecureRandom randomNumbers = new SecureRandom();
+        for (int i = 0; i < number.length; i++)
+            number[i] = randomNumbers.nextInt(100);
+        printArray(number, 99);
+    }
+}
